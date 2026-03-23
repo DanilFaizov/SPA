@@ -31,7 +31,6 @@ function Contact() {
 
   // Получаем цену выбранной услуги
   const selectedService = services.find(s => s.id === formData.service);
-  const servicePrice = selectedService?.price || 0;
 
   // Валидация
   const validateForm = (): boolean => {
