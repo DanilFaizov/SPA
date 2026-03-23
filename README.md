@@ -4,7 +4,7 @@
 
 ## 🚀 Демо
 
-[🌐 Посмотреть сайт](https://твой-username.github.io/portfolio)
+[🌐 Посмотреть сайт]([https://твой-username.github.io/portfolio](https://danilfaizov.github.io/SPA/))
 
 ## ✨ Особенности
 
@@ -59,6 +59,6 @@ src/
 ```
 ## Контакты 
 
-[Мой GitHub](https://github.com/DanilFaizov)
-[Написать на Email](mailto:faizovdanil23@gmail.com)
-[Telegram](https://t.me/@faizkaD)
+-[Мой GitHub](https://github.com/DanilFaizov)
+-[Написать на Email](mailto:faizovdanil23@gmail.com)
+-[Telegram](https://t.me/@faizkaD)
