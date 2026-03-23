@@ -4,7 +4,7 @@
 
 ## 🚀 Демо
 
-[🌐 Посмотреть сайт]([https://твой-username.github.io/portfolio](https://danilfaizov.github.io/SPA/))
+[🌐 Посмотреть сайт](https://danilfaizov.github.io/SPA/)
 
 ## ✨ Особенности
 
