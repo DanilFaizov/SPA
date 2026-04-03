@@ -1,36 +1,37 @@
-import { useState, useEffect} from 'react';
-import {motion} from 'framer-motion';
-import './Hero.css'
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import "./Hero.css";
+import Avatar from "../../../dist/Avatar.jpg";
 
-function Hero(){
+function Hero() {
   const [isVisible, SetIsVisible] = useState(false);
-  const [typedText, setTypedText] = useState('');
-  const fullText = 'Frontend- разработчик | React | TypeScript';
+  const [typedText, setTypedText] = useState("");
+  const fullText = "Frontend- разработчик";
 
-  useEffect(()=>{
-    let index =0;
+  useEffect(() => {
+    let index = 0;
     const timer = setInterval(() => {
       if (index <= fullText.length) {
-        setTypedText(fullText.slice(0,index));
+        setTypedText(fullText.slice(0, index));
         index++;
-      }else{
+      } else {
         clearInterval(timer);
       }
-    },50);
+    }, 50);
 
-    return ()=> clearInterval(timer);
-  },[]);
+    return () => clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     SetIsVisible(true);
-  },[]);
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
-    document.getElementById(sectionId)?.scrollIntoView({behavior: 'smooth'});
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
   };
 
-  return(
-        <section id="home" className="hero">
+  return (
+    <section id="home" className="hero">
       {/* Декоративные элементы */}
       <div className="hero-bg-shapes">
         <div className="shape shape-1"></div>
@@ -52,7 +53,7 @@ function Hero(){
             animate={{ opacity: isVisible ? 1 : 0 }}
             transition={{ delay: 0.2 }}
           >
-            👋 Привет, я
+            Привет, я
           </motion.p>
 
           {/* Имя */}
@@ -62,7 +63,7 @@ function Hero(){
             animate={{ opacity: isVisible ? 1 : 0, scale: isVisible ? 1 : 0.8 }}
             transition={{ delay: 0.4, duration: 0.5 }}
           >
-            Алексей <span className="highlight">Петров</span>
+            Данил <span className="highlight">Фаизов</span>
           </motion.h1>
 
           {/* Печатный текст */}
@@ -84,8 +85,6 @@ function Hero(){
             transition={{ delay: 1.2 }}
           >
             Создаю современные, быстрые и удобные веб-интерфейсы.
-            Специализируюсь на React-экосистеме и люблю превращать
-            сложные задачи в элегантные решения.
           </motion.p>
 
           {/* Кнопки */}
@@ -96,16 +95,16 @@ function Hero(){
             transition={{ delay: 1.5 }}
           >
             <button
-              onClick={() => scrollToSection('projects')}
+              onClick={() => scrollToSection("projects")}
               className="btn btn-primary"
             >
-              <span>🚀</span> Мои проекты
+              Мои проекты
             </button>
             <button
-              onClick={() => scrollToSection('contact')}
+              onClick={() => scrollToSection("contact")}
               className="btn btn-secondary"
             >
-              <span>📬</span> Связаться
+               Связаться
             </button>
           </motion.div>
 
@@ -117,7 +116,7 @@ function Hero(){
             transition={{ delay: 1.8 }}
           >
             <a
-              href="https://github.com/alexei-petrov"
+              href="https://github.com/DanilFaizov"
               target="_blank"
               rel="noopener noreferrer"
               className="social-link"
@@ -125,22 +124,14 @@ function Hero(){
               GitHub
             </a>
             <a
-              href="https://t.me/alexei_petrov"
+              href="https://t.me/faizkaD"
               target="_blank"
               rel="noopener noreferrer"
               className="social-link"
             >
               Telegram
             </a>
-            <a
-              href="https://linkedin.com/in/alexei-petrov"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-link"
-            >
-              LinkedIn
-            </a>
-            <a href="mailto:alexei@example.com" className="social-link">
+            <a href="mailto:faizovdanil23@gmail.com" className="social-link">
               Email
             </a>
           </motion.div>
@@ -156,8 +147,8 @@ function Hero(){
           <div className="avatar-wrapper">
             <div className="avatar-glow"></div>
             <img
-              src="https://api.dicebear.com/9.x/avataaars/svg?seed=Alexei"
-              alt="Алексей Петров"
+              src={Avatar}
+              alt="Данил Фаизов"
               className="avatar"
             />
           </div>

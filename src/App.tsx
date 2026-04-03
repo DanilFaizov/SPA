@@ -30,7 +30,7 @@ function App() {
   };
 
   return (
-    <Router>
+    <Router  basename="/SPA">
       <div className={`app ${isDarkMode ? 'dark' : 'light'}`}>
         <Routes>
           <Route

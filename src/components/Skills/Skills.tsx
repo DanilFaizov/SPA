@@ -4,18 +4,15 @@ import type { Skill } from '../../types';
 import './Skills.css';
 
 const skillsData: Skill[] = [
-  { name: "React", level: "advanced", category: "frontend", icon: "⚛️" },
-  { name: "TypeScript", level: "advanced", category: "frontend", icon: "📘" },
-  { name: "JavaScript", level: "advanced", category: "frontend", icon: "📜" },
+  { name: "React", level: "intermediate", category: "frontend", icon: "⚛️" },
+  { name: "TypeScript", level: "intermediate", category: "frontend", icon: "📘" },
+  { name: "JavaScript", level: "intermediate", category: "frontend", icon: "📜" },
   { name: "HTML5", level: "advanced", category: "frontend", icon: "🌐" },
-  { name: "CSS3/SASS", level: "advanced", category: "frontend", icon: "🎨" },
-  { name: "Node.js", level: "intermediate", category: "backend", icon: "🟢" },
-  { name: "Express", level: "intermediate", category: "backend", icon: "🚂" },
-  { name: "PostgreSQL", level: "intermediate", category: "backend", icon: "🐘" },
-  { name: "Git", level: "advanced", category: "tools", icon: "📦" },
+  { name: "CSS3", level: "advanced", category: "frontend", icon: "🎨" },
+  { name: "PostgreSQL", level: "beginner", category: "backend", icon: "🐘" },
+  { name: "Git", level: "beginner", category: "tools", icon: "📦" },
   { name: "Docker", level: "beginner", category: "tools", icon: "🐳" },
-  { name: "Figma", level: "intermediate", category: "tools", icon: "🎭" },
-  { name: "VS Code", level: "advanced", category: "tools", icon: "💻" }
+  { name: "Figma", level: "beginner", category: "tools", icon: "🎭" },
 ];
 
 // Уровни навыков
@@ -44,10 +41,10 @@ function Skills() {
 
   // Категории для фильтра
   const categories = [
-    { id: 'all', name: 'Все', icon: '📊' },
-    { id: 'frontend', name: 'Frontend', icon: '🎨' },
-    { id: 'backend', name: 'Backend', icon: '⚙️' },
-    { id: 'tools', name: 'Инструменты', icon: '🛠️' }
+    { id: 'all', name: 'Все' },
+    { id: 'frontend', name: 'Frontend'},
+    { id: 'backend', name: 'Backend' },
+    { id: 'tools', name: 'Инструменты' }
   ];
 
   return (
@@ -60,11 +57,9 @@ function Skills() {
           animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-tag">🎯 Компетенции</span>
-          <h2 className="section-title">Мои навыки</h2>
+          <span className="section-tag">Мои навыки</span>
           <p className="section-subtitle">
             Технологии и инструменты, которыми я владею.
-            Постоянно учусь и развиваюсь в новых направлениях.
           </p>
         </motion.div>
 
@@ -81,7 +76,6 @@ function Skills() {
               onClick={() => setActiveCategory(cat.id)}
               className={`filter-btn ${activeCategory === cat.id ? 'active' : ''}`}
             >
-              <span>{cat.icon}</span>
               {cat.name}
             </button>
           ))}
@@ -98,31 +92,6 @@ function Skills() {
             />
           ))}
         </div>
-
-        {/* Статистика */}
-        <motion.div
-          className="skills-stats"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
-          <div className="stat-item">
-            <span className="stat-number">12+</span>
-            <span className="stat-label">Технологий</span>
-          </div>
-          <div className="stat-item">
-            <span className="stat-number">5+</span>
-            <span className="stat-label">Проектов</span>
-          </div>
-          <div className="stat-item">
-            <span className="stat-number">2+</span>
-            <span className="stat-label">Года опыта</span>
-          </div>
-          <div className="stat-item">
-            <span className="stat-number">100%</span>
-            <span className="stat-label">Отдачи</span>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

@@ -1,4 +1,300 @@
-/* Радио-кнопки */
+/* ===== ОСНОВНЫЕ СТИЛИ СЕКЦИИ ===== */
+.contact {
+  padding: 6rem 2rem;
+  background: #ffffff;
+}
+
+.dark .contact {
+  background: #0f172a;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* ===== ЗАГОЛОВКИ СЕКЦИИ ===== */
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-tag {
+  display: inline-block;
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(22, 163, 74, 0.1));
+  color: #16a34a;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.dark .section-tag {
+  color: #22c55e;
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(22, 163, 74, 0.15));
+}
+
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.dark .section-title {
+  color: #f9fafb;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.dark .section-subtitle {
+  color: #9ca3af;
+}
+
+/* ===== ОБЁРТКА КОНТАКТОВ ===== */
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  margin-top: 3rem;
+}
+
+/* ===== ЛЕВАЯ КОЛОНКА (ИНФО) ===== */
+.contact-info {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  padding: 3rem;
+  border-radius: 20px;
+  color: white;
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+
+.contact-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-info > p {
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+/* Прайс-лист */
+.price-preview {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}
+
+.price-preview h4 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.price-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.price-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.2s;
+}
+
+.price-item:last-child {
+  border-bottom: none;
+}
+
+.price-item:hover {
+  transform: translateX(5px);
+}
+
+.price-name {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.price-value {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #86efac;
+}
+
+/* ===== ПРАВАЯ КОЛОНКА (ФОРМА) ===== */
+.contact-form-wrapper {
+  background: #f9fafb;
+  padding: 3rem;
+  border-radius: 20px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.dark .contact-form-wrapper {
+  background: #1e293b;
+  border-color: #334155;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ===== ГРУППЫ ПОЛЕЙ ===== */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.dark .form-group label {
+  color: #e5e7eb;
+}
+
+.form-group label::after {
+  content: '*';
+  color: #ef4444;
+  font-weight: 700;
+}
+
+/* ===== ПОЛЯ ВВОДА ===== */
+.form-group input,
+.form-group textarea,
+.form-group select {
+  padding: 1rem 1.2rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s;
+  background: #ffffff;
+  color: #1f2937;
+}
+
+.dark .form-group input,
+.dark .form-group textarea,
+.dark .form-group select {
+  background: #0f172a;
+  border-color: #334155;
+  color: #f9fafb;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #22c55e;
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.1);
+  transform: translateY(-2px);
+}
+
+.form-group input.error,
+.form-group textarea.error,
+.form-group select.error {
+  border-color: #ef4444;
+  background: #fef2f2;
+}
+
+.dark .form-group input.error,
+.dark .form-group textarea.error {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+/* Placeholder */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #9ca3af;
+}
+
+/* ===== ТЕКСТОВАЯ ОБЛАСТЬ ===== */
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* ===== СЕЛЕКТ УСЛУГ ===== */
+.service-select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2322c55e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.5rem;
+  padding-right: 3rem;
+}
+
+/* ===== ИНФОРМАЦИЯ ОБ УСЛУГЕ ===== */
+.service-info {
+  margin-top: 1rem;
+  padding: 1.2rem;
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(22, 163, 74, 0.1));
+  border-radius: 12px;
+  border-left: 4px solid #22c55e;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.service-description {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.dark .service-description {
+  color: #9ca3af;
+}
+
+.service-price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #16a34a;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dark .service-price {
+  color: #22c55e;
+}
+
+/* ===== РАДИО-КНОПКИ ===== */
 .radio-group {
   display: flex;
   gap: 1rem;
@@ -8,14 +304,18 @@
 .radio-label {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.8rem 1.2rem;
+  gap: 0.6rem;
+  padding: 0.9rem 1.3rem;
   background: #f9fafb;
   border: 2px solid #e5e7eb;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s;
   font-weight: 500;
+  flex: 1;
+  min-width: 120px;
+  position: relative;
+  overflow: hidden;
 }
 
 .dark .radio-label {
@@ -23,162 +323,182 @@
   border-color: #334155;
 }
 
+.radio-label::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(22, 163, 74, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 0;
+}
+
+.radio-label:hover::before {
+  opacity: 1;
+}
+
 .radio-label input[type="radio"] {
   width: 18px;
   height: 18px;
   accent-color: #22c55e;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.radio-label span {
+  position: relative;
+  z-index: 1;
 }
 
 .radio-label:hover {
   border-color: #22c55e;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(34, 197, 94, 0.2);
 }
 
 .radio-label:has(input:checked) {
-  background: rgba(34, 197, 94, 0.1);
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(22, 163, 74, 0.15));
   border-color: #22c55e;
   color: #16a34a;
+  box-shadow: 0 5px 20px rgba(34, 197, 94, 0.3);
 }
 
 .dark .radio-label:has(input:checked) {
   color: #22c55e;
 }
 
-/* Выбор услуги */
-.service-select {
-  width: 100%;
-  padding: 1rem 1.2rem;
-  border: 2px solid #e5e7eb;
+/* ===== КНОПКА ОТПРАВКИ ===== */
+.submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  padding: 1.3rem 2.5rem;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
+  border: none;
   border-radius: 12px;
-  font-size: 1rem;
-  background: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s;
-}
-
-.dark .service-select {
-  background: #0f172a;
-  border-color: #334155;
-  color: #f9fafb;
-}
-
-.service-select:focus {
-  outline: none;
-  border-color: #22c55e;
-  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.1);
-}
-
-/* Информация об услуге */
-.service-info {
   margin-top: 1rem;
-  padding: 1rem;
-  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(22, 163, 74, 0.1));
-  border-radius: 10px;
-  border-left: 4px solid #22c55e;
+  position: relative;
+  overflow: hidden;
 }
 
-.service-description {
-  color: #6b7280;
-  font-size: 0.95rem;
-  margin-bottom: 0.5rem;
+.submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
 }
 
-.dark .service-description {
-  color: #9ca3af;
+.submit-btn:hover::before {
+  left: 100%;
 }
 
-.service-price {
-  font-size: 1.3rem;
-  font-weight: 700;
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(34, 197, 94, 0.5);
+}
+
+.submit-btn:active:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Лоадер */
+.loader {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ===== СООБЩЕНИЯ ОБ УСПЕХЕ/ОШИБКЕ ===== */
+.success-message {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(22, 163, 74, 0.15));
   color: #16a34a;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 500;
+  border: 2px solid rgba(34, 197, 94, 0.3);
+  animation: slideIn 0.4s ease-out;
 }
 
-.dark .service-price {
+.dark .success-message {
   color: #22c55e;
 }
 
-/* Прайс-лист */
-.price-preview {
-  margin-top: 2rem;
-  padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-}
-
-.price-preview h4 {
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-}
-
-.price-list {
-  list-style: none;
-  padding: 0;
-}
-
-.price-item {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.8rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.price-item:last-child {
-  border-bottom: none;
-}
-
-.price-name {
-  font-weight: 500;
-}
-
-.price-value {
-  font-weight: 700;
-  color: #86efac;
-}
-
-/* Info items */
-.info-items {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin: 2rem 0;
-}
-
-.info-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-}
-
-.info-icon {
-  font-size: 2rem;
-  background: rgba(255, 255, 255, 0.2);
-  padding: 0.8rem;
-  border-radius: 12px;
-}
-
-.info-item strong {
-  display: block;
-  font-size: 1.1rem;
-  margin-bottom: 0.3rem;
-}
-
-.info-item p {
-  opacity: 0.9;
-  font-size: 0.95rem;
-}
-
-/* Сообщение об ошибке */
 .error-message-box {
-  background: rgba(239, 68, 68, 0.1);
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.15), rgba(220, 38, 38, 0.15));
   color: #ef4444;
-  padding: 1rem;
-  border-radius: 10px;
+  padding: 1.5rem;
+  border-radius: 12px;
   text-align: center;
-  border: 1px solid rgba(239, 68, 68, 0.2);
-  margin-top: 1rem;
+  border: 2px solid rgba(239, 68, 68, 0.3);
+  animation: slideIn 0.4s ease-out;
 }
 
-/* Адаптивность */
+.error-message {
+  color: #ef4444;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-top: 0.3rem;
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 1024px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-info {
+    position: static;
+    order: 2;
+  }
+}
+
 @media (max-width: 640px) {
+  .contact {
+    padding: 4rem 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
+  }
+  
+  .contact-form-wrapper {
+    padding: 2rem 1.5rem;
+  }
+  
   .radio-group {
     flex-direction: column;
   }
@@ -186,4 +506,28 @@
   .radio-label {
     width: 100%;
   }
+  
+  .submit-btn {
+    width: 100%;
+  }
+}
+
+/* ===== ДОПОЛНИТЕЛЬНЫЕ ЭФФЕКТЫ ===== */
+/* Фокус для доступности */
+.form-group input:focus-visible,
+.form-group textarea:focus-visible,
+.form-group select:focus-visible,
+.radio-label:focus-within,
+.submit-btn:focus-visible {
+  outline: 3px solid rgba(34, 197, 94, 0.5);
+  outline-offset: 2px;
+}
+
+/* Плавные переходы для всех интерактивных элементов */
+.form-group input,
+.form-group textarea,
+.form-group select,
+.radio-label,
+.submit-btn {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }

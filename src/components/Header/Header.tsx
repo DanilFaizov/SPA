@@ -44,8 +44,7 @@ function Header({isDarkMode, toggleTheme}: HeaderProps){
         <div className="header-container">
           {/* Логотип */}
           <Link to="/" className="logo" onClick={() => scrollToSection('home')}>
-            <span className="logo-icon">🌿</span>
-            <span className="logo-text">Алексей Петров</span>
+            <span className="logo-text">Данил Фаизов</span>
           </Link>
 
           {/* Кнопка мобильного меню */}

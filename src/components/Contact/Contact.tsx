@@ -126,7 +126,7 @@ function Contact() {
           animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-tag">📬 Связь</span>
+          <span className="section-tag">Связь</span>
           <h2 className="section-title">Обсудим проект?</h2>
           <p className="section-subtitle">
             Заполните форму, и я свяжусь с вами в течение 24 часов
@@ -141,37 +141,9 @@ function Contact() {
             animate={{ opacity: isVisible ? 1 : 0, x: isVisible ? 0 : -50 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h3>Почему стоит работать со мной?</h3>
-            
-            <div className="info-items">
-              <div className="info-item">
-                <span className="info-icon">⚡</span>
-                <div>
-                  <strong>Быстрая работа</strong>
-                  <p>Соблюдаю дедлайны</p>
-                </div>
-              </div>
-              
-              <div className="info-item">
-                <span className="info-icon">💎</span>
-                <div>
-                  <strong>Качество</strong>
-                  <p>Современный код и дизайн</p>
-                </div>
-              </div>
-              
-              <div className="info-item">
-                <span className="info-icon">🤝</span>
-                <div>
-                  <strong>Поддержка</strong>
-                  <p>Помощь после сдачи проекта</p>
-                </div>
-              </div>
-            </div>
-
             {/* Прайс */}
             <div className="price-preview">
-              <h4>📋 Услуги и цены</h4>
+              <h4>Услуги и цены</h4>
               <ul className="price-list">
                 {services.map(service => (
                   <li key={service.id} className="price-item">
@@ -238,7 +210,7 @@ function Contact() {
                       onChange={handleChange}
                       disabled={isSubmitting}
                     />
-                    <span>💬 Telegram</span>
+                    <span>Telegram</span>
                   </label>
                   <label className="radio-label">
                     <input
@@ -249,7 +221,7 @@ function Contact() {
                       onChange={handleChange}
                       disabled={isSubmitting}
                     />
-                    <span>📧 Email</span>
+                    <span>Email</span>
                   </label>
                   <label className="radio-label">
                     <input
@@ -260,7 +232,7 @@ function Contact() {
                       onChange={handleChange}
                       disabled={isSubmitting}
                     />
-                    <span>📱 Телефон</span>
+                    <span>Телефон</span>
                   </label>
                 </div>
               </div>
@@ -322,7 +294,7 @@ function Contact() {
                 {selectedService && (
                   <div className="service-info">
                     <p className="service-description">{selectedService.description}</p>
-                    <p className="service-price">💰 {new Intl.NumberFormat('ru-RU').format(selectedService.price)} ₽</p>
+                    <p className="service-price"> {new Intl.NumberFormat('ru-RU').format(selectedService.price)} ₽</p>
                   </div>
                 )}
               </div>
@@ -356,7 +328,6 @@ function Contact() {
                   </>
                 ) : (
                   <>
-                    <span>🚀</span>
                     Отправить заявку
                   </>
                 )}

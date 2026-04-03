@@ -17,7 +17,7 @@ function NotFound() {
           Похоже, вы заблудились. Вернитесь на главную страницу.
         </p>
         <Link to="/" className="back-home-btn">
-          🏠 Вернуться домой
+          Вернуться домой
         </Link>
       </motion.div>
     </div>

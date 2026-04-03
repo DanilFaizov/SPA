@@ -5,54 +5,50 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import type { Project } from '../../types/index.ts';
 import './Projects.css';
+import SPA from "../../../dist/img/SPA.png";
+import BinGo from "../../../dist/img/BinGo.png";
+import WinFormsHotel from "../../../dist/img/WinFormsHotel.jpg";
+import Gitpod from "../../../dist/img/Gitpod.png";
+
 
 // Данные проектов (ЗАМЕНИ НА СВОИ!)
 const projectsData: Project[] = [
   {
     id: 1,
-    title: "E-Commerce Platform",
-    description: "Полноценный интернет-магазин с корзиной, фильтрацией товаров, оплатой и личным кабинетом. Адаптивный дизайн и оптимизированная производительность.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-    repoUrl: "https://github.com/alexei-petrov/ecommerce",
+    title: "SPA",
+    description: "Мой сайт портфолио.",
+    image: SPA,
+    repoUrl: "https://github.com/DanilFaizov/SPA",
     demoUrl: "https://alexei-shop.vercel.app",
-    tags: ["React", "TypeScript", "Redux", "Node.js"]
+    tags: ["React", "TypeScript", "Vue"]
   },
   {
     id: 2,
-    title: "Task Management App",
-    description: "Приложение для управления задачами с drag-and-drop, категориями, приоритетами и синхронизацией в реальном времени.",
-    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&h=400&fit=crop",
-    repoUrl: "https://github.com/alexei-petrov/task-manager",
-    demoUrl: "https://alexei-tasks.vercel.app",
-    tags: ["React", "TypeScript", "Firebase", "DnD"]
+    title: "BinGo",
+    description: "мобильное приложение, которое позволяет изучать искусство с помощью тестов в виде карточек. Студенты, школьники и преподаватели могут использовать уже готовые шаблоны или создавать свои для усвоения материала. Игра в угадай художника – показывают картину/произведение искусства и надо написать автора. Чем выше сложность, тем не популярнее художник и сложнее угадать в карточках.",
+    image: BinGo,
+    repoUrl: "https://github.com/DanilFaizov/BinGo",
+    demoUrl: "https://vk.com/app53321903",
+    tags: ["React"]
   },
   {
     id: 3,
-    title: "Weather Dashboard",
-    description: "Погодное приложение с использованием OpenWeather API. Показывает текущую погоду, прогноз на 5 дней и историю запросов.",
-    image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=600&h=400&fit=crop",
-    repoUrl: "https://github.com/alexei-petrov/weather-app",
-    demoUrl: "https://alexei-weather.vercel.app",
-    tags: ["React", "API", "CSS3", "Geolocation"]
+    title: "АСУ «Гостиница»",
+    description: "Данное приложение — учебный проект по автоматизации работы небольшой гостиницы. Разработано в рамках курсовой работы по направлению Прикладная информатика (профиль: Разработка веб- и мобильных приложений).",
+    image: WinFormsHotel,
+    repoUrl: "https://github.com/DanilFaizov/WinFormsHotel",
+    demoUrl: "https://github.com/DanilFaizov/WinFormsHotel",
+    tags: ["C#","SQL"]
   },
   {
     id: 4,
-    title: "Social Media Dashboard",
-    description: "Панель управления для социальных сетей с аналитикой, планировщиком публикаций и интеграцией с популярными платформами.",
-    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop",
-    repoUrl: "https://github.com/alexei-petrov/social-dashboard",
-    demoUrl: "https://alexei-social.vercel.app",
-    tags: ["React", "TypeScript", "Chart.js", "REST API"]
+    title: "Gitpod",
+    description: "Учебнйы проект.",
+    image: Gitpod,
+    repoUrl: "https://github.com/DanilFaizov/Gitpod",
+    demoUrl: "https://danilfaizov.github.io/Gitpod/",
+    tags: ["HTML","css"]
   },
-  {
-    id: 5,
-    title: "Portfolio Website",
-    description: "Личный сайт-портфолио с тёмной темой, анимациями, адаптивным дизайном и оптимизацией для поисковых систем.",
-    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600&h=400&fit=crop",
-    repoUrl: "https://github.com/alexei-petrov/portfolio",
-    demoUrl: "https://alexei-portfolio.vercel.app",
-    tags: ["React", "TypeScript", "Vite", "Framer Motion"]
-  }
 ];
 
 function Projects() {
@@ -76,12 +72,8 @@ function Projects() {
           animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-tag">💼 Портфолио</span>
+          <span className="section-tag"> Портфолио</span>
           <h2 className="section-title">Мои проекты</h2>
-          <p className="section-subtitle">
-            Здесь собраны мои последние работы и пет-проекты.
-            Каждый проект — это новый вызов и возможность научиться чему-то новому.
-          </p>
         </motion.div>
 
         {/* Сетка проектов */}
@@ -135,7 +127,7 @@ function ProjectCard({ project, index, isVisible }: ProjectCardProps) {
                 className="action-btn"
                 title="Исходный код"
               >
-                🔗 Код
+                 Код
               </a>
             )}
             {project.demoUrl && (
@@ -146,7 +138,7 @@ function ProjectCard({ project, index, isVisible }: ProjectCardProps) {
                 className="action-btn primary"
                 title="Демо версия"
               >
-                👁️ Демо
+                 Демо
               </a>
             )}
           </div>
