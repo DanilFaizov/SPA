@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import "./Footer.css";
 
 function Footer() {
-  const [currentYear] = useState(new Date().getFullYear());
   const [showBackToTop, setShowBackToTop] = useState(false);
 
   // Показываем кнопку "Наверх" после прокрутки
