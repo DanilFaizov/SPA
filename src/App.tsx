@@ -1,7 +1,7 @@
 //главный компонент 
 
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import NotFound from './pages/NotFound';
 import './App.css';
@@ -30,7 +30,7 @@ function App() {
   };
 
   return (
-    <BrowserRouter  basename="/SPA">
+    <Router  basename="/SPA">
       <div className={`app ${isDarkMode ? 'dark' : 'light'}`}>
         <Routes>
           <Route
@@ -40,7 +40,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
-    </BrowserRouter>
+    </Router>
   );
 }
 
