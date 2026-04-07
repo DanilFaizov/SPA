@@ -4,9 +4,7 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
-  
-  // ⚠️ САМОЕ ВАЖНОЕ: base должен совпадать с именем репозитория
-  base: '/SPA/',  // ← Если репозиторий называется "portfolio"
+  base: '/SPA/', 
   
   resolve: {
     alias: {
