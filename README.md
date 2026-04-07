@@ -4,7 +4,7 @@
 
 ## 🚀 Демо
 
-[🌐 Посмотреть сайт](https://твой-username.github.io/portfolio)
+[🌐 Посмотреть сайт](https://danilfaizov.github.io/SPA/)
 
 ## ✨ Особенности
 
@@ -29,7 +29,7 @@
 
 
 ## Архитектура проекта 
-
+```
 src/
 │
 ├── components/          # Переиспользуемые UI-компоненты
@@ -56,9 +56,9 @@ src/
 ├── App.tsx              # Корневой компонент с роутингом
 ├── main.tsx             # Точка входа приложения
 └── index.css            # Глобальные стили и сброс
-
+```
 ## Контакты 
 
-[Мой GitHub](https://github.com/DanilFaizov)
-[Написать на Email](mailto:faizovdanil23@gmail.com)
-[Telegram](https://t.me/@faizkaD)
+-[Мой GitHub](https://github.com/DanilFaizov)
+-[Написать на Email](mailto:faizovdanil23@gmail.com)
+-[Telegram](https://t.me/@faizkaD)
