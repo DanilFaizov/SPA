@@ -2,10 +2,15 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import type { Project } from '../../types/index.ts';
 import './Projects.css';
-import SPA from "../../../dist/assets/SPA-B4aqPg7R.png";
-import BinGo from "../../../dist/assets/BinGo-CvGc-fTe.png";
-import WinFormsHotel from "../../../dist/assets/WinFormsHotel-B3-HxhaG.jpg";
-import Gitpod from "../../../dist/assets/Gitpod-BSqwH5T3.png";
+//import SPA from "../../../dist/assets/SPA-B4aqPg7R.png";
+//import BinGo from "../../../dist/assets/BinGo-CvGc-fTe.png";
+//import WinFormsHotel from "../../../dist/assets/WinFormsHotel-B3-HxhaG.jpg";
+//import Gitpod from "../../../dist/assets/Gitpod-BSqwH5T3.png";
+
+const SPA = '/SPA-B4aqPg7R.png';
+const BinGo = '/BinGo-CvGc-fTe.png';
+const WinFormsHotel = '/WinFormsHotel-B3-HxhaG.jpg';
+const Gitpod = '/Gitpod-BSqwH5T3.png'
 
 
 const projectsData: Project[] = [

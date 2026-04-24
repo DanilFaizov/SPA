@@ -7,7 +7,7 @@ function Hero() {
   const [isVisible, SetIsVisible] = useState(false);
   const [typedText, setTypedText] = useState("");
   const fullText = "Frontend- разработчик";
-  const Avatar = '/Avatar.jpg'
+  const Avatar = '/Avatar-D2D6vQqu.jpg'
 
   useEffect(() => {
     let index = 0;
