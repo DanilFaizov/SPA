@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import "./Hero.css";
-import Avatar from "../../../dist/Avatar.jpg";
+import Avatar from "../../../dist/assets/Avatar-D2D6vQqu.jpg";
 
 function Hero() {
   const [isVisible, SetIsVisible] = useState(false);
@@ -32,7 +32,6 @@ function Hero() {
 
   return (
     <section id="home" className="hero">
-      {/* Декоративные элементы */}
       <div className="hero-bg-shapes">
         <div className="shape shape-1"></div>
         <div className="shape shape-2"></div>
@@ -46,7 +45,6 @@ function Hero() {
           animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50 }}
           transition={{ duration: 0.8 }}
         >
-          {/* Приветствие */}
           <motion.p
             className="hero-greeting"
             initial={{ opacity: 0 }}
@@ -55,8 +53,6 @@ function Hero() {
           >
             Привет, я
           </motion.p>
-
-          {/* Имя */}
           <motion.h1
             className="hero-title"
             initial={{ opacity: 0, scale: 0.8 }}
@@ -65,8 +61,6 @@ function Hero() {
           >
             Данил <span className="highlight">Фаизов</span>
           </motion.h1>
-
-          {/* Печатный текст */}
           <motion.div
             className="hero-typed"
             initial={{ opacity: 0 }}
@@ -76,8 +70,6 @@ function Hero() {
             {typedText}
             <span className="cursor">|</span>
           </motion.div>
-
-          {/* Описание */}
           <motion.p
             className="hero-description"
             initial={{ opacity: 0 }}
@@ -86,8 +78,6 @@ function Hero() {
           >
             Создаю современные, быстрые и удобные веб-интерфейсы.
           </motion.p>
-
-          {/* Кнопки */}
           <motion.div
             className="hero-buttons"
             initial={{ opacity: 0, y: 20 }}
@@ -107,8 +97,6 @@ function Hero() {
                Связаться
             </button>
           </motion.div>
-
-          {/* Социальные ссылки */}
           <motion.div
             className="hero-social"
             initial={{ opacity: 0 }}
@@ -136,8 +124,6 @@ function Hero() {
             </a>
           </motion.div>
         </motion.div>
-
-        {/* Изображение/Аватар */}
         <motion.div
           className="hero-image"
           initial={{ opacity: 0, x: 50 }}
@@ -154,8 +140,6 @@ function Hero() {
           </div>
         </motion.div>
       </div>
-
-      {/* Индикатор прокрутки вниз */}
       <motion.div
         className="scroll-indicator"
         animate={{ y: [0, 10, 0] }}

@@ -29,9 +29,9 @@ export interface FormErrors{
   name?:string;
   email?: string;
   message?: string;
-  telegram?: string;    // ← Добавлено
-  phone?: string;       // ← Добавлено
-  service?: string;     // ← Опционально
+  telegram?: string;    
+  phone?: string;       
+  service?: string;     
   contactMethod?: string;
 }
 

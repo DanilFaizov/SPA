@@ -1,4 +1,3 @@
-/* ===== ОСНОВНЫЕ СТИЛИ СЕКЦИИ ===== */
 .contact {
   padding: 6rem 2rem;
   background: #ffffff;
@@ -13,7 +12,6 @@
   margin: 0 auto;
 }
 
-/* ===== ЗАГОЛОВКИ СЕКЦИИ ===== */
 .section-header {
   text-align: center;
   margin-bottom: 4rem;
@@ -59,7 +57,6 @@
   color: #9ca3af;
 }
 
-/* ===== ОБЁРТКА КОНТАКТОВ ===== */
 .contact-wrapper {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
@@ -67,7 +64,6 @@
   margin-top: 3rem;
 }
 
-/* ===== ЛЕВАЯ КОЛОНКА (ИНФО) ===== */
 .contact-info {
   background: linear-gradient(135deg, #22c55e, #16a34a);
   padding: 3rem;
@@ -88,7 +84,6 @@
   margin-bottom: 2rem;
 }
 
-/* Прайс-лист */
 .price-preview {
   background: rgba(255, 255, 255, 0.1);
   padding: 1.5rem;
@@ -136,7 +131,6 @@
   color: #86efac;
 }
 
-/* ===== ПРАВАЯ КОЛОНКА (ФОРМА) ===== */
 .contact-form-wrapper {
   background: #f9fafb;
   padding: 3rem;
@@ -157,7 +151,6 @@
   gap: 1.5rem;
 }
 
-/* ===== ГРУППЫ ПОЛЕЙ ===== */
 .form-group {
   display: flex;
   flex-direction: column;
@@ -183,7 +176,6 @@
   font-weight: 700;
 }
 
-/* ===== ПОЛЯ ВВОДА ===== */
 .form-group input,
 .form-group textarea,
 .form-group select {
@@ -226,19 +218,16 @@
   background: rgba(239, 68, 68, 0.1);
 }
 
-/* Placeholder */
 .form-group input::placeholder,
 .form-group textarea::placeholder {
   color: #9ca3af;
 }
 
-/* ===== ТЕКСТОВАЯ ОБЛАСТЬ ===== */
 .form-group textarea {
   resize: vertical;
   min-height: 120px;
 }
 
-/* ===== СЕЛЕКТ УСЛУГ ===== */
 .service-select {
   cursor: pointer;
   appearance: none;
@@ -249,7 +238,6 @@
   padding-right: 3rem;
 }
 
-/* ===== ИНФОРМАЦИЯ ОБ УСЛУГЕ ===== */
 .service-info {
   margin-top: 1rem;
   padding: 1.2rem;
@@ -294,7 +282,6 @@
   color: #22c55e;
 }
 
-/* ===== РАДИО-КНОПКИ ===== */
 .radio-group {
   display: flex;
   gap: 1rem;
@@ -371,7 +358,6 @@
   color: #22c55e;
 }
 
-/* ===== КНОПКА ОТПРАВКИ ===== */
 .submit-btn {
   display: flex;
   align-items: center;
@@ -420,7 +406,6 @@
   cursor: not-allowed;
 }
 
-/* Лоадер */
 .loader {
   width: 20px;
   height: 20px;
@@ -434,7 +419,6 @@
   to { transform: rotate(360deg); }
 }
 
-/* ===== СООБЩЕНИЯ ОБ УСПЕХЕ/ОШИБКЕ ===== */
 .success-message {
   background: linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(22, 163, 74, 0.15));
   color: #16a34a;
@@ -474,7 +458,6 @@
   75% { transform: translateX(5px); }
 }
 
-/* ===== АДАПТИВНОСТЬ ===== */
 @media (max-width: 1024px) {
   .contact-wrapper {
     grid-template-columns: 1fr;
@@ -512,8 +495,6 @@
   }
 }
 
-/* ===== ДОПОЛНИТЕЛЬНЫЕ ЭФФЕКТЫ ===== */
-/* Фокус для доступности */
 .form-group input:focus-visible,
 .form-group textarea:focus-visible,
 .form-group select:focus-visible,
@@ -523,7 +504,6 @@
   outline-offset: 2px;
 }
 
-/* Плавные переходы для всех интерактивных элементов */
 .form-group input,
 .form-group textarea,
 .form-group select,

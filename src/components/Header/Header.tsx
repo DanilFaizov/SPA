@@ -37,17 +37,13 @@ function Header({isDarkMode, toggleTheme}: HeaderProps){
   };
   return(
     <>
-      {/* Прогресс-бар чтения страницы */}
       <div className="scroll-progress" style={{ width: `${scrollProgress}%` }} />
 
       <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
         <div className="header-container">
-          {/* Логотип */}
           <Link to="/" className="logo" onClick={() => scrollToSection('home')}>
             <span className="logo-text">Данил Фаизов</span>
           </Link>
-
-          {/* Кнопка мобильного меню */}
           <button
             className={`menu-toggle ${isMenuOpen ? 'active' : ''}`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -57,8 +53,6 @@ function Header({isDarkMode, toggleTheme}: HeaderProps){
             <span></span>
             <span></span>
           </button>
-
-          {/* Навигация */}
           <nav className={`nav ${isMenuOpen ? 'active' : ''}`}>
             <button onClick={() => scrollToSection('home')} className="nav-link">
               Главная
@@ -72,8 +66,6 @@ function Header({isDarkMode, toggleTheme}: HeaderProps){
             <button onClick={() => scrollToSection('contact')} className="nav-link">
               Контакты
             </button>
-
-            {/* Переключатель темы */}
             <button
               onClick={toggleTheme}
               className="theme-toggle"

@@ -14,8 +14,6 @@ const skillsData: Skill[] = [
   { name: "Docker", level: "beginner", category: "tools", icon: "🐳" },
   { name: "Figma", level: "beginner", category: "tools", icon: "🎭" },
 ];
-
-// Уровни навыков
 const levelColors = {
   beginner: { from: '#fbbf24', to: '#f59e0b', label: 'Начальный' },
   intermediate: { from: '#3b82f6', to: '#2563eb', label: 'Средний' },
@@ -34,12 +32,10 @@ function Skills() {
     }
   }, [isInView]);
 
-  // Фильтрация по категории
   const filteredSkills = activeCategory === 'all'
     ? skillsData
     : skillsData.filter(skill => skill.category === activeCategory);
 
-  // Категории для фильтра
   const categories = [
     { id: 'all', name: 'Все' },
     { id: 'frontend', name: 'Frontend'},
@@ -50,7 +46,6 @@ function Skills() {
   return (
     <section id="skills" className="skills" ref={ref}>
       <div className="container">
-        {/* Заголовок */}
         <motion.div
           className="section-header"
           initial={{ opacity: 0, y: 30 }}
@@ -63,7 +58,6 @@ function Skills() {
           </p>
         </motion.div>
 
-        {/* Фильтры категорий */}
         <motion.div
           className="skills-filter"
           initial={{ opacity: 0, y: 20 }}
@@ -81,7 +75,6 @@ function Skills() {
           ))}
         </motion.div>
 
-        {/* Сетка навыков */}
         <div className="skills-grid">
           {filteredSkills.map((skill, index) => (
             <SkillCard
@@ -97,7 +90,6 @@ function Skills() {
   );
 }
 
-// Карточка навыка
 interface SkillCardProps {
   skill: Skill;
   index: number;
@@ -123,8 +115,7 @@ function SkillCard({ skill, index, isVisible }: SkillCardProps) {
     >
       <div className="skill-icon">{skill.icon}</div>
       <h3 className="skill-name">{skill.name}</h3>
-      
-      {/* Индикатор уровня */}
+
       <div className="skill-level">
         <div
           className="skill-bar"

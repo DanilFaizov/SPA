@@ -1,4 +1,3 @@
-// src/components/Contact/Contact.tsx
 import { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import type { ContactFormData, FormErrors } from '../../types';
@@ -10,10 +9,10 @@ function Contact() {
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
-    contactMethod: 'telegram', // По умолчанию Telegram
+    contactMethod: 'telegram',
     telegram: '',
     phone: '',
-    service: 'landing', // По умолчанию лендинг
+    service: 'landing',
     message: ''
   });
   const [errors, setErrors] = useState<FormErrors>({});
@@ -29,10 +28,8 @@ function Contact() {
     }
   }, [isInView]);
 
-  // Получаем цену выбранной услуги
   const selectedService = services.find(s => s.id === formData.service);
 
-  // Валидация
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
 
@@ -48,7 +45,6 @@ function Contact() {
       newErrors.email = 'Некорректный email';
     }
 
-    // Валидация в зависимости от способа связи
     if (formData.contactMethod === 'telegram' && !formData.telegram?.trim()) {
       newErrors.telegram = 'Введите Telegram';
     }
@@ -67,20 +63,17 @@ function Contact() {
     return Object.keys(newErrors).length === 0;
   };
 
-  // Обработка ввода
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
     
-    // Очищаем ошибку при вводе
     if (errors[name as keyof FormErrors]) {
       setErrors(prev => ({ ...prev, [name]: undefined }));
     }
   };
 
-  // Отправка формы
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -90,12 +83,10 @@ function Contact() {
     setSubmitStatus('idle');
 
     try {
-      // Отправляем в Telegram
       const success = await sendToTelegram(formData);
       
       if (success) {
         setSubmitStatus('success');
-        // Сбрасываем форму
         setFormData({
           name: '',
           email: '',
@@ -119,7 +110,6 @@ function Contact() {
   return (
     <section id="contact" className="contact" ref={ref}>
       <div className="container">
-        {/* Заголовок */}
         <motion.div
           className="section-header"
           initial={{ opacity: 0, y: 30 }}
@@ -134,14 +124,12 @@ function Contact() {
         </motion.div>
 
         <div className="contact-wrapper">
-          {/* Информация */}
           <motion.div
             className="contact-info"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: isVisible ? 1 : 0, x: isVisible ? 0 : -50 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            {/* Прайс */}
             <div className="price-preview">
               <h4>Услуги и цены</h4>
               <ul className="price-list">
@@ -157,7 +145,6 @@ function Contact() {
             </div>
           </motion.div>
 
-          {/* Форма */}
           <motion.div
             className="contact-form-wrapper"
             initial={{ opacity: 0, x: 50 }}
@@ -165,7 +152,6 @@ function Contact() {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <form onSubmit={handleSubmit} className="contact-form" noValidate>
-              {/* Имя */}
               <div className="form-group">
                 <label htmlFor="name">Ваше имя *</label>
                 <input
@@ -181,7 +167,6 @@ function Contact() {
                 {errors.name && <span className="error-message">{errors.name}</span>}
               </div>
 
-              {/* Email */}
               <div className="form-group">
                 <label htmlFor="email">Email *</label>
                 <input
@@ -197,7 +182,6 @@ function Contact() {
                 {errors.email && <span className="error-message">{errors.email}</span>}
               </div>
 
-              {/* Способ связи */}
               <div className="form-group">
                 <label>Как с вами связаться? *</label>
                 <div className="radio-group">
@@ -236,8 +220,6 @@ function Contact() {
                   </label>
                 </div>
               </div>
-
-              {/* Telegram или Телефон (в зависимости от выбора) */}
               {formData.contactMethod === 'telegram' && (
                 <div className="form-group">
                   <label htmlFor="telegram">Ваш Telegram *</label>
@@ -271,8 +253,6 @@ function Contact() {
                   {errors.phone && <span className="error-message">{errors.phone}</span>}
                 </div>
               )}
-
-              {/* Выбор услуги */}
               <div className="form-group">
                 <label htmlFor="service">Выберите услугу *</label>
                 <select
@@ -289,8 +269,6 @@ function Contact() {
                     </option>
                   ))}
                 </select>
-                
-                {/* Показываем цену */}
                 {selectedService && (
                   <div className="service-info">
                     <p className="service-description">{selectedService.description}</p>
@@ -298,8 +276,6 @@ function Contact() {
                   </div>
                 )}
               </div>
-
-              {/* Сообщение */}
               <div className="form-group">
                 <label htmlFor="message">Расскажите о проекте *</label>
                 <textarea
@@ -314,8 +290,6 @@ function Contact() {
                 />
                 {errors.message && <span className="error-message">{errors.message}</span>}
               </div>
-
-              {/* Кнопка */}
               <button
                 type="submit"
                 className="submit-btn"
@@ -332,8 +306,6 @@ function Contact() {
                   </>
                 )}
               </button>
-
-              {/* Статус */}
               {submitStatus === 'success' && (
                 <div className="success-message">
                   ✅ <strong>Заявка отправлена!</strong><br />

@@ -1,17 +1,13 @@
-// src/components/Projects/Projects.tsx
-// Секция с проектами
-
 import { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import type { Project } from '../../types/index.ts';
 import './Projects.css';
-import SPA from "../../../dist/img/SPA.png";
-import BinGo from "../../../dist/img/BinGo.png";
-import WinFormsHotel from "../../../dist/img/WinFormsHotel.jpg";
-import Gitpod from "../../../dist/img/Gitpod.png";
+import SPA from "../../../dist/assets/SPA-B4aqPg7R.png";
+import BinGo from "../../../dist/assets/BinGo-CvGc-fTe.png";
+import WinFormsHotel from "../../../dist/assets/WinFormsHotel-B3-HxhaG.jpg";
+import Gitpod from "../../../dist/assets/Gitpod-BSqwH5T3.png";
 
 
-// Данные проектов (ЗАМЕНИ НА СВОИ!)
 const projectsData: Project[] = [
   {
     id: 1,
@@ -65,7 +61,6 @@ function Projects() {
   return (
     <section id="projects" className="projects" ref={ref}>
       <div className="container">
-        {/* Заголовок секции */}
         <motion.div
           className="section-header"
           initial={{ opacity: 0, y: 30 }}
@@ -76,7 +71,6 @@ function Projects() {
           <h2 className="section-title">Мои проекты</h2>
         </motion.div>
 
-        {/* Сетка проектов */}
         <div className="projects-grid">
           {projectsData.map((project, index) => (
             <ProjectCard
@@ -92,7 +86,6 @@ function Projects() {
   );
 }
 
-// Карточка проекта
 interface ProjectCardProps {
   project: Project;
   index: number;
@@ -114,7 +107,6 @@ function ProjectCard({ project, index, isVisible }: ProjectCardProps) {
       }}
       whileHover={{ y: -10 }}
     >
-      {/* Изображение */}
       <div className="project-image-wrapper">
         <img src={project.image} alt={project.title} className="project-image" />
         <div className="project-overlay">
@@ -145,12 +137,10 @@ function ProjectCard({ project, index, isVisible }: ProjectCardProps) {
         </div>
       </div>
 
-      {/* Информация */}
       <div className="project-content">
         <h3 className="project-title">{project.title}</h3>
         <p className="project-description">{project.description}</p>
 
-        {/* Теги */}
         <div className="project-tags">
           {project.tags.map((tag, i) => (
             <span key={i} className="project-tag">
