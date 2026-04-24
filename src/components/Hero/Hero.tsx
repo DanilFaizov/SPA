@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import "./Hero.css";
-import Avatar from "../../../dist/assets/Avatar-D2D6vQqu.jpg";
+//import Avatar from "../../../dist/assets/Avatar-D2D6vQqu.jpg";
 
 function Hero() {
   const [isVisible, SetIsVisible] = useState(false);
   const [typedText, setTypedText] = useState("");
   const fullText = "Frontend- разработчик";
+  const Avatar = '/Avatar.jpg'
 
   useEffect(() => {
     let index = 0;
